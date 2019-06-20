@@ -21,14 +21,11 @@ function postComments(state = [], action) {
       //     text: action.comment
       //   }
       // ];
-      return immutable.set(
-        state,
-        {},
-        {
-          user: action.author,
-          text: action.comment
-        }
-      );
+      console.log("ADD");
+      return immutable.set(state, [], {
+        user: action.author,
+        text: action.comment
+      });
     case "REMOVE_COMMENT":
       console.log("removed!!!");
       return [...state.slice(0, action.i), ...state.slice(action.i + 1)];
